@@ -12,9 +12,9 @@ using Microsoft.Extensions.Configuration;
 
 namespace BookStoreApp.API.Controllers
 {
-    [Route("api/controller")]
+    [Route("api/[controller]")]
     [ApiController]
-    public class AuthController : Controller
+    public class AuthController : ControllerBase
     {
         private readonly IAuthRepository _repo;
         private readonly IConfiguration _config;
