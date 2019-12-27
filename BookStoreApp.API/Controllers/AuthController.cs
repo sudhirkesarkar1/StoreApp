@@ -27,7 +27,7 @@ namespace BookStoreApp.API.Controllers
         public async Task<IActionResult> Register(UserForRegisterDto userForRegisterDto){
             userForRegisterDto.Username = userForRegisterDto.Username.ToLower();
             if(await _repo.UserExists(userForRegisterDto.Username)){
-                return BadRequest("User already exists");
+                return BadRequest("Username already exists");
             }
             var userToCreate = new User{
                 Username = userForRegisterDto.Username
